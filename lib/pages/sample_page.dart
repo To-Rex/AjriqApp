@@ -1,3 +1,4 @@
+import 'package:ajriq_app/pages/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -68,8 +69,7 @@ class SamplePage extends StatelessWidget {
                     padding: EdgeInsets.only(right: w * 0.05),
                     child: IconButton(
                       onPressed: () {},
-                      highlightColor:
-                          const Color.fromRGBO(14, 119, 11, 1).withOpacity(0.2),
+                      highlightColor: const Color.fromRGBO(14, 119, 11, 1).withOpacity(0.2),
                       icon: HeroIcon(
                         HeroIcons.bell,
                         color: Colors.black,
@@ -100,8 +100,10 @@ class SamplePage extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           _getController.changeIsLogin();
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignIn()));
                         },
                         style: ElevatedButton.styleFrom(
+                          elevation: 0,
                           backgroundColor: const Color.fromRGBO(14, 119, 11, 1),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
