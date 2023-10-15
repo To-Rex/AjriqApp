@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Hi there!',
+          'Salom, Mehmon!',
           style: TextStyle(color: Colors.black, fontSize: w * 0.05),
         ),
       ),
@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-                height: h * 0.4,
+                height: h * 0.5,
                 width: w,
                 margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
@@ -46,13 +46,50 @@ class HomePage extends StatelessWidget {
                     SizedBox(
                       width: w * 0.9,
                       child: Text(
-                        'Welcome to Ajriq',
+                        'Doctorlar bilan onlayn suhbatlashing',
                         style: TextStyle(
                           fontSize: w * 0.04,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    )
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      width: w * 0.9,
+                      child: Text(
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam. ',
+                        style: TextStyle(
+                          fontSize: w * 0.03,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      width: w * 0.9,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          elevation: 0,
+                          backgroundColor: const Color.fromRGBO(14, 119, 11, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        child: Text(
+                          'Batafsil',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: w * 0.03,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
 
                   ],
                 )),
