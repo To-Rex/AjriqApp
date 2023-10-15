@@ -1,8 +1,15 @@
+import 'package:ajriq_app/api/api.dart';
+import 'package:ajriq_app/bottomPages/home.dart';
+import 'package:ajriq_app/bottomPages/search.dart';
+import 'package:ajriq_app/bottomPages/users.dart';
 import 'package:ajriq_app/pages/sign_in.dart';
+import 'package:ajriq_app/pages/sign_in_phone.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:heroicons/heroicons.dart';
+import '../bottomPages/global.dart';
 import '../companents/getController.dart';
 
 class SamplePage extends StatelessWidget {
@@ -11,26 +18,10 @@ class SamplePage extends StatelessWidget {
   final GetController _getController = Get.put(GetController());
 
   static final List<Widget> _widgetOptions = <Widget>[
-    Center(
-      child: Text(
-        'Index 0: Home',
-      ),
-    ),
-    Center(
-      child: Text(
-        'Index 1: Search',
-      ),
-    ),
-    Center(
-      child: Text(
-        'Index 2: Global',
-      ),
-    ),
-    Center(
-      child: Text(
-        'Index 3: User',
-      ),
-    ),
+    HomePage(),
+    SearchPage(),
+    GlobalClass(),
+    UsersPage()
   ];
 
   void _onItemTapped(int index) {
@@ -99,8 +90,9 @@ class SamplePage extends StatelessWidget {
                       height: h * 0.04,
                       child: ElevatedButton(
                         onPressed: () {
+                          print('Sign in');
                           _getController.changeIsLogin();
-                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignIn()));
+                          //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignInPhone()));
                         },
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
