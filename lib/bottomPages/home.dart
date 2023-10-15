@@ -1,5 +1,8 @@
+import 'package:ajriq_app/pages/chat_page.dart';
 import 'package:flutter/material.dart';
 import 'package:heroicons/heroicons.dart';
+
+import '../pages/batafsil.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -72,7 +75,13 @@ class HomePage extends StatelessWidget {
                     SizedBox(
                       width: w * 0.9,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MorePage()),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
                           backgroundColor: const Color.fromRGBO(14, 119, 11, 1),
@@ -101,7 +110,13 @@ class HomePage extends StatelessWidget {
         splashColor: Colors.green,
         hoverColor: Colors.green,
         backgroundColor: Colors.grey[200],
-        onPressed: () {},
+        onPressed: () {
+          //push chat page
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ChatPage()),
+          );
+        },
         child: HeroIcon(
           HeroIcons.chatBubbleLeftRight,
           color: Colors.green,
